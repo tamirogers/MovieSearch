@@ -1,0 +1,15 @@
+<div>
+    <div>
+        <button id="closeButton" mat-button (click)="closeModal()">X</button>
+    </div>
+    <div *ngFor="let tile of modalMovie" >
+        <div id="modaltitle">  {{ tile.Title }}
+        </div>
+        <div id="modalYear">  {{ tile.Year }}
+        </div>
+        <div>
+            <img src={{tile.Poster}}> 
+        </div> 
+    </div>
+</div>
+

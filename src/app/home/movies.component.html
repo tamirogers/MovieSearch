@@ -1,1 +1,37 @@
-<p>movies works! hello</p>
+<div class="body-content">
+  <div id="container">
+    <mat-toolbar color="primary" id="topHeader">
+      <div>
+        <button mat-button class="menu-button">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <span id="textHeader">MOVIE SEARCH</span>
+    </mat-toolbar>
+    <mat-sidenav-container class="sideNav">
+      <mat-sidenav-content>
+        <div *ngFor="let menu of menuList">
+          <div id="menuList">{{ menu }}
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+        <p id="topTitle">Movie List</p>
+        <mat-grid-list rowHeight="200px" gutterSize="50px" [cols]="breakpoint" (window:resize)="onResize($event)">
+            <mat-grid-tile *ngFor="let tile of coachMovies" [colspan]="1" (click)="openModal(tile)">  
+                <div id="movieTitle"> {{ tile.Title }}
+                </div>
+                <div id="year">{{ tile.Year }}
+                </div>
+                <span>
+                <img class="poster" src={{tile.Poster}}> 
+                </span>  
+            </mat-grid-tile>
+        </mat-grid-list>  
+  </div>
+
+</div>
+
+
+
+
